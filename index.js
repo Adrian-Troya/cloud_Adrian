@@ -2,10 +2,12 @@
 const express = require('express'); //framework de desarrollo
 const knex = require('./db'); //llamado a conf de db
 const routes = require('./routes'); //llamado a rutas
+const cors = require('cors');
 
 const app = express(); // creamos una nueva instancia
 const port = 3000; // puerto de salida
 
+app.use(cors());
 app.use(express.json()); // configura tipo de dato json
 
 app.use('/api', routes); // configura la url base y rutas
